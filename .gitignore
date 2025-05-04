@@ -26,8 +26,6 @@ share/python-wheels/
 *.egg
 MANIFEST
 log/
-traindata/
-t5_translate_en_ru_zh_small_1024/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
