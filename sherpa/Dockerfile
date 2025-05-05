@@ -4,7 +4,7 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y python3 pip git 
 RUN ln /usr/bin/python3.10 /usr/bin/python
 RUN pip install pyOpenSSL websockets numpy sherpa_onnx
-RUN pip install transformers 
+RUN pip install transformers sentencepiece
 
 WORKDIR /
 RUN git clone https://github.com/k2-fsa/sherpa-onnx \
