@@ -5,8 +5,8 @@ RUN apt-get install -y python3 pip git curl
 RUN ln /usr/bin/python3.12 /usr/bin/python
 RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
 RUN apt-get install git-lfs
-RUN pip install pyOpenSSL websockets numpy sherpa_onnx 
-RUN pip install transformers sentencepiece
+RUN pip install pyOpenSSL websockets numpy sherpa_onnx --break-system-packages
+RUN pip install transformers sentencepiece torch --break-system-packages
 
 WORKDIR /
 RUN git clone https://github.com/tian-jie/meeting-recorder.git /app \
