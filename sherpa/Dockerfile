@@ -1,15 +1,16 @@
 FROM ubuntu
 
 RUN apt-get update && apt-get upgrade -y 
-RUN apt-get install -y python3 pip git 
-RUN ln /usr/bin/python3.10 /usr/bin/python
-RUN pip install pyOpenSSL websockets numpy sherpa_onnx
+RUN apt-get install -y python3 pip git curl
+RUN ln /usr/bin/python3.12 /usr/bin/python
+RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
+RUN apt-get install git-lfs
+RUN pip install pyOpenSSL websockets numpy sherpa_onnx 
 RUN pip install transformers sentencepiece
 
 WORKDIR /
-RUN git clone https://github.com/k2-fsa/sherpa-onnx \
-    && mkdir /app && mkdir /app/certificate \
-    && cp /sherpa-onnx/python-api-examples/* /app -r 
+RUN git clone https://github.com/tian-jie/meeting-recorder.git /app \
+    && git lfs pull
 
 WORKDIR /app
 
