@@ -26,6 +26,10 @@ share/python-wheels/
 *.egg
 MANIFEST
 log/
+bin/
+Scripts/
+sherpa/pyvenv.cfg
+man1/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template

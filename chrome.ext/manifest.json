@@ -13,7 +13,7 @@
   "permissions": ["tabCapture", "offscreen"],
   "content_scripts": [
     {
-        "matches": ["https://teams.live.com/*", "https://www.youtube.com/*"],
+        "matches": ["https://teams.live.com/*", "https://www.youtube.com/*", "https://teams.microsoft.com/v2/*"],
         "css": ["content/index.css"],
         "js": ["content/jquery-3.7.1.min.js", "content/index.js"],
         "run_at": "document_idle"
