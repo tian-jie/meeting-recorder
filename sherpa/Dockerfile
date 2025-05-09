@@ -1,18 +1,13 @@
 FROM ubuntu
 
 RUN apt-get update && apt-get upgrade -y 
-RUN apt-get install -y python3 pip git curl
+RUN apt-get install -y python3 pip
 RUN ln /usr/bin/python3.12 /usr/bin/python
-RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
-RUN apt-get install git-lfs
 RUN pip install pyOpenSSL websockets numpy sherpa_onnx --break-system-packages
 RUN pip install transformers sentencepiece torch --break-system-packages
 
-WORKDIR /
-RUN git clone https://github.com/tian-jie/meeting-recorder.git /app \
-    && git lfs pull
-
 WORKDIR /app
+COPY . .
 
 EXPOSE 6006
 
